@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.GridPane?>
+<GridPane alignment="center" hgap="10" styleClass="root" vgap="10" xmlns="http://javafx.com/javafx/8"
+          xmlns:fx="http://javafx.com/fxml/1" fx:controller="ua.kpi.controller.MainController">
+    <children>
+        <ProgressIndicator fx:id="processingIndicator" prefHeight="136.0" prefWidth="138.0" progress="0.0"/>
+    </children>
+</GridPane>

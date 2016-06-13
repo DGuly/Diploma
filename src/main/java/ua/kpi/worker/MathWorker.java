@@ -3,13 +3,20 @@ package ua.kpi.worker;
 import java.util.ArrayList;
 import java.util.List;
 
-import static ua.kpi.worker.MathConstants.*;
+import static ua.kpi.worker.MathConstants.BETA;
+import static ua.kpi.worker.MathConstants.e;
 
 /**
  * Created by dmytryguly on 5/18/16.
  */
 
 public class MathWorker {
+
+    private DataStorage dataStorage;
+
+    public MathWorker(DataStorage dataStorage) {
+        this.dataStorage = dataStorage;
+    }
 
     public List<Integer> getTimeForChart() {
         List<Integer> time = new ArrayList<>();
@@ -31,7 +38,7 @@ public class MathWorker {
      * @return
      */
     public double calculateUa(double Uvh, double t, double m, int d) {
-        return (KQ * Uvh * BETA / m) * (1 - Math.pow(e, (-t / getTau(d))));
+        return (dataStorage.getKQ() * Uvh * BETA / m) * (1 - Math.pow(e, (-t / getTau(d))));
     }
 
     public double calculateUb(double Uvh, double t, double m, int d) {
@@ -48,7 +55,7 @@ public class MathWorker {
 
     public List<Double> getMs() {
         List<Double> ms = new ArrayList<>();
-        for (int i = m_LOWER; i <= m_UPPER; i++) {
+        for (int i = dataStorage.getM_LOWER(); i <= dataStorage.getM_UPPER(); i++) {
             ms.add((double) i);
         }
         return ms;
@@ -56,7 +63,7 @@ public class MathWorker {
 
     public List<Double> getDs() {
         List<Double> ds = new ArrayList<>();
-        for (int i = d_LOWER; i <= d_MIDDLE; i++) {
+        for (int i = dataStorage.getD_LOWER(); i <= dataStorage.getD_MIDDLE(); i++) {
             ds.add((double) i);
         }
         return ds;

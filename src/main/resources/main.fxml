@@ -10,11 +10,13 @@
         <Insets bottom="100.0" left="100.0" right="100.0" top="100.0"/>
     </padding>
     <children>
-        <Button prefHeight="50.0" prefWidth="400.0" onAction="#buildFread"
+        <Button prefHeight="50.0" prefWidth="500.0" onAction="#buildFread"
                 text="График быстродействия от размера элементов" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-        <Button prefHeight="50.0" prefWidth="400.0" onAction="#buildUaFromM" text="График Ua, Ub от количества адресов"
+        <Button prefHeight="50.0" prefWidth="500.0" onAction="#buildUaFromM" text="График Ua, Ub от количества адресов"
                 GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-        <Button prefHeight="50.0" prefWidth="400.0" onAction="#buildAppConstants" text="Гистограмма констант системы"
+        <Button prefHeight="50.0" prefWidth="500.0" onAction="#setIncomingData" text="Установить входные данные"
                 GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        <Button prefHeight="50.0" prefWidth="500.0" onAction="#buildAppConstants" text="Гистограмма констант системы"
+                GridPane.columnIndex="1" GridPane.rowIndex="4"/>
     </children>
 </GridPane>
